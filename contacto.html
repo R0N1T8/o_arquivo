@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Arquivo | Contacto</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="recursos/favicon.png">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">O ARQUIVO</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acoruna.html">A Coruña</a></li>
+                <li><a href="lugo.html">Lugo</a></li>
+                <li><a href="ourense.html">Ourense</a></li>
+                <li><a href="pontevedra.html">Pontevedra</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-contacto"><!-- Contedor principal do formulario de contacto pudiendo dividir en dúas columnas a paxina -->
+        <h1 class="titulo-contacto">Fálanos!</h1>
+        <p class="subtitulo-contacto">Tes algunha dúbida ou queres unha camiseta en especial? Escríbenos, pero non fagas spam que soltamos as vacas.</p>
+        
+        <div class="contacto-grid">
+            <div class="info-directa">
+                <h2>Onde estamos?</h2>
+                <div class="info-item">
+                    <span class="etiqueta">📍 Dirección:</span>
+                    <p>13 Rúa do Percebe<br>36201 Vigo, Galicia</p>
+                </div>
+                <div class="info-item">
+                    <span class="etiqueta">📞 Teléfono:</span>
+                    <p>+34 986 12 34 56</p>
+                </div>
+                <div class="info-item">
+                    <span class="etiqueta">✉️ Correo:</span>
+                    <p>ola@oarquivo.gal</p>
+                </div>
+
+                <div class="redes-sociales">
+                    <h3>Síguenos a pista</h3>
+                    <div class="enlaces-redes">
+                        <a href="#">Instagram</a>
+                        <a href="#">X / Twitter</a>
+                        <a href="#">TikTok</a>
+                    </div>
+                </div>
+            </div>
+
+            <form class="formulario-contacto" action="#" method="POST">
+                <div class="grupo-input">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required placeholder="O teu nome">
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="O teu correo">
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="mensaxe">Mensaxe</label>
+                    <textarea id="mensaxe" name="mensaxe" rows="6" required placeholder="Cóntanos todo..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-enviar">Enviar Mensaxe</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Proxecto Web - Adrián Vázquez & Samuel Reinaldo. <a href="privacidad.html">Política de Privacidade</a> · <a href="aviso-legal.html">Aviso Legal e Cookies</a></p>
+    </footer>
+</body>
+</html>

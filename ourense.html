@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Arquivo | Ourense</title> <!-- O título da páxina -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="recursos/favicon.png"> <!-- O icono de favorito -->
+</head>
+<body>
+    <header>
+        <!-- O logo é un enlace á páxina principal -->
+        <a href="index.html" class="logo">O ARQUIVO</a>
+        <!-- menu de navegación con enlaces as paxinas principais -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acoruna.html">A Coruña</a></li>
+                <li><a href="lugo.html">Lugo</a></li>
+                <li><a href="ourense.html" class="active">Ourense</a></li>
+                <li><a href="pontevedra.html">Pontevedra</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Texto descritivo da provincia antes do catálogo e debaixo do nome da pestaña -->
+    <img class="lista-imagen-hover" id="imgHover" src="" alt="">
+
+    <main class="contenedor-galeria">
+        <h1 class="titulo-provincia">OURENSE</h1>
+
+        <p class="texto-provincia">
+            Ourense é a provincia máis interior de Galicia, coñecida polas súas augas termais, 
+            os seus cañóns fluviais e os cumes nevados de Manzaneda. Lonxe do mar, garda unha 
+            identidade propia e paisaxes que sorprenden a quen as visita. Estas imaxes recollen 
+            algúns dos seus recunchos máis especiais. Se queres levar un destes momentos contigo, 
+            podes atopar as nosas camisetas no noso perfil de Vinted.
+        </p>
+
+        <ul class="lista-galeria"> <!-- Lista de elementos que forman a galería, cada un con unha imaxe asociada para o hover e un texto diferente para cada elemento da lista -->
+
+            <li class="lista-item" data-img="recursos/ourense/ia-1910.jpeg">
+                <a href="https://www.vinted.es/member/3155052962" target="_blank" class="lista-link">
+                    <span class="lista-numero">01</span>
+                    <span class="lista-nombre">IA</span>
+                    <span class="lista-meta">
+                        <span>1910</span>
+                        <span class="lista-arrow">→</span>
+                    </span>
+                </a>
+            </li>
+
+            <li class="lista-item" data-img="recursos/ourense/Manzaneda-2021.jpg">
+                <a href="https://www.vinted.es/member/3155052962" target="_blank" class="lista-link">
+                    <span class="lista-numero">02</span>
+                    <span class="lista-nombre">Manzaneda</span>
+                    <span class="lista-meta">
+                        <span>2021</span>
+                        <span class="lista-arrow">→</span>
+                    </span>
+                </a>
+            </li>
+
+            <li class="lista-item" data-img="recursos/ourense/carballino-2020.jpg">
+                <a href="https://www.vinted.es/member/3155052962" target="_blank" class="lista-link">
+                    <span class="lista-numero">03</span>
+                    <span class="lista-nombre">Carballiño</span>
+                    <span class="lista-meta">
+                        <span>2020</span>
+                        <span class="lista-arrow">→</span>
+                    </span>
+                </a>
+            </li>
+
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Proxecto Web - Adrián Vázquez & Samuel Reinaldo. <a href="privacidad.html">Política de Privacidade</a> · <a href="aviso-legal.html">Aviso Legal e Cookies</a></p>
+    </footer>
+
+    <script>
+        const imgHover = document.getElementById('imgHover'); // Selecciona a imaxen flotante que mostrará ao pasar o ratón sobre os elementos da lista
+        const items = document.querySelectorAll('.lista-item[data-img]'); // Selecciona todos os elementos da lista que tieñen o atributo data-img para mandarseos ao hover
+
+        // Evento para que a imaxe siga ao ratón e non se saia da xanela
+        document.addEventListener('mousemove', (e) => {
+            let x = e.clientX + 30;
+            let y = e.clientY - 130;
+            if (x + 380 > window.innerWidth) x = e.clientX - 410;
+            if (y < 10) y = 10;
+            imgHover.style.left = x + 'px';
+            imgHover.style.top = y + 'px';
+        });
+
+        // Isto sirve para mostrar a imaxe ao pasar o ratón sobre cada elemento da lista e ocultala ao sair
+        items.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if (item.dataset.img) {
+                    imgHover.src = item.dataset.img;
+                    imgHover.classList.add('visible');// isto quere dicir que cando o mouse pase por enrima do elemento da lista se lle añada o atributo visible á imaxen enlazada con ese elemento da lista
+                }
+            });
+            item.addEventListener('mouseleave', () => {
+                imgHover.classList.remove('visible');// Isto quere dicir que cando o mouse salga de enriba do elemento da lista se lle quite o atributo visible á imaxen enlazada con ese elemento da lista
+            });
+        });
+    </script>
+</body>
+</html>
